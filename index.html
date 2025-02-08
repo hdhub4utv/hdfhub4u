@@ -222,7 +222,18 @@
     <header>
         <img src="hdhub4ulogo.png" alt="HDHub4u Logo">
         <h1>HDHub4u: Download Latest Movies & Web Series in HD</h1>
+        <span class="visitor-count">Readers: <span id="visitorCounter">0</span></span>
     </header>
+    <script>
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            count = count ? parseInt(count) + 1 : 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCounter').textContent = count;
+        }
+
+        updateVisitorCount();
+    </script>
 
     <article>
         <img src="Thumbnail-1.webp" alt="HDHub4u Latest Movie Download in HD" loading="lazy" style="width: 100%; margin-bottom: 20px;">
